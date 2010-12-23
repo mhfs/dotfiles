@@ -1,0 +1,41 @@
+#
+# My shell stuff. Included in .zshrc.
+#
+
+# ls colors
+autoload colors; colors;
+export LS_COLORS='di=1;;40:ln=1;;40:so=1;;40:pi=1;;40:fx=1;;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
+
+# Grep
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32'
+
+# Enable ls colors
+if [ "$DISABLE_LS_COLORS" != "true" ]
+then
+  # Find the option for using colors in ls, depending on the version: Linux or BSD
+  ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
+fi
+
+# My Textmate Alias
+alias mm='mate app/ config/ lib/ public/stylesheets public/javascripts spec/ features/ db/migrate TODO Gemfile'
+
+# Brew Mysql Aliases
+alias mysql-start="launchctl load -w /usr/local/Cellar/mysql/5.1.41/com.mysql.mysqld.plist"
+alias mysql-stop="launchctl unload -w /usr/local/Cellar/mysql/5.1.41/com.mysql.mysqld.plist"
+
+# SCM Editors
+export SVN_EDITOR="/usr/bin/mate -w"
+export GIT_EDITOR="vim"
+export EDITOR="mvim"
+
+# Load RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# REE Memory allocation options. Helps in test speed but eats memory like hell.
+# export RUBY_HEAP_MIN_SLOTS=500000
+# export RUBY_HEAP_SLOTS_INCREMENT=500000
+# export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+# export RUBY_GC_MALLOC_LIMIT=500000000
+# export RUBY_HEAP_FREE_MIN=250000
+

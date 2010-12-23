@@ -1,0 +1,4 @@
+local g="$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')"
+if [ -n "$g" ]; then
+  printf "[%s]" $g
+fi
