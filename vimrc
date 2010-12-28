@@ -89,6 +89,8 @@ autocmd BufRead,BufNewFile *.prawn set filetype=ruby
 autocmd BufRead,BufNewFile *.thor set filetype=ruby
 autocmd BufRead,BufNewFile *.ru set filetype=ruby
 autocmd BufRead,BufNewFile Gemfile set filetype=ruby
+autocmd BufRead,BufNewFile Capfile set filetype=ruby
+autocmd BufRead,BufNewFile *.tt set filetype=eruby
 
 " set foldmethod=syntax            " set folding method
 
