@@ -22,6 +22,9 @@ module Dotfiles
       # Rubygems
       link_file "gemrc", "~/.gemrc", :symbolic => true
 
+      # Irb
+      link_file "irbrc", "~/.irbrc", :symbolic => true
+
       # Git
       @github_token = ask("Github token:")
       template "templates/gitconfig.tt", "./compiled/gitconfig"

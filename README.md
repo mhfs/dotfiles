@@ -3,6 +3,14 @@ MHFS Dotfiles
 
 Collection of my dotfiles.
 
+
+Usage
+-----
+
+Link files:
+
+    thor dotfiles:link
+
 Vim
 ---
 
@@ -15,10 +23,19 @@ Zsh
 
 Initially stolen from ryanb's dotfiles with some customization.
 
-Usage
------
+Rubygems
+--------
 
-Link files:
+I don't use rdoc and ri locally.
 
-    thor dotfiles:link
+Irb
+---
+
+Better rails log, completion, awesome print, history, etc.
+
+
+Git
+---
+
+Global gitignore and github capable gitconfig.
 
