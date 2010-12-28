@@ -1,0 +1,26 @@
+[user]
+	name = Marcelo Silveira
+	email = grande@gmail.com
+[alias]
+	ci = commit
+	co = checkout
+	br = branch
+	ps = push
+	pl = pull
+	rb = rebase
+	mg = merge
+	st = status -s
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[core]
+	editor = vim
+	excludesfile = /Users/mhfs/.gitignore
+[github]
+	user = mhfs
+	token = <%= @github_token %>
+[merge]
+	summary = true
