@@ -26,7 +26,7 @@ alias mysql-stop="launchctl unload -w /usr/local/Cellar/mysql/5.1.41/com.mysql.m
 
 # SCM Editors
 export SVN_EDITOR="/usr/bin/mate -w"
-export GIT_EDITOR="vim"
+export GIT_EDITOR="/usr/bin/vim"
 export EDITOR="mvim"
 
 # Load RVM

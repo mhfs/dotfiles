@@ -8,15 +8,16 @@ set encoding=utf-8
 set list
 set listchars=tab:▸\ ,eol:¬,trail:.
 
-" colors
-colorscheme desert
-
 " remap command from : to ; avoiding shifts
 " nnoremap ; :
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :tabedit $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+"
+" colors
+colorscheme vividchalk
+
 
 " Enhanced command line completion.
 set wildmenu

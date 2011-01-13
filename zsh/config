@@ -1,7 +1,10 @@
-export PS1='%{$fg[yellow]%}➜ %{$fg[green]%}%c$(git_dirty_for_prompt)%{$fg[blue]%} %# %{$reset_color%}'
-export RPS1='%{$fg[yellow]%}$(git_info_for_prompt)$(rvm_prompt_info)%{$reset_color%}'
+# Old prompt with git info (damn slow)
+# export PS1='%{$fg[yellow]%}➜ %{$fg[green]%}%c$(git_dirty_for_prompt)%{$fg[blue]%} %# %{$reset_color%}'
 
-export EDITOR='mate -w'
+export PS1='%{$fg[yellow]%}➜ %{$fg[green]%}%c%{$fg[blue]%} %# %{$reset_color%}'
+#export RPS1='%{$fg[yellow]%}$(git_info_for_prompt)$(rvm_prompt_info)%{$reset_color%}'
+
+#export EDITOR='mate -w'
 export PATH="~/bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 

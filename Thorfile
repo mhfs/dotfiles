@@ -13,6 +13,7 @@ module Dotfiles
       # Vim
       link_file "vimrc",  "~/.vimrc.local", :symbolic => true
       link_file "gvimrc", "~/.gvimrc.local", :symbolic => true
+      link_file "mhfs.vim", "~/.vim/colors/mhfs.vim", :symbolic => true
 
       # Zsh
       link_file "localrc", "~/.localrc", :symbolic => true
