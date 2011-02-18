@@ -19,3 +19,4 @@ imenu <silent> File.Save <Esc>:if expand("%") == ""<Bar>browse confirm w<Bar>els
 " map <D-t> <Plug>PeepOpen
 
 color mhfs
+set transparency=3

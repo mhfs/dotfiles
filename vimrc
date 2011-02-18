@@ -111,3 +111,4 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+set wildignore+=data,tmp,vendor,db/sphinx,log,script,
