@@ -1,4 +1,0 @@
-# Stolen from oh-my-zsh
-if [[ -n $(git status -s 2> /dev/null) ]]; then
-  echo " %{$fg[red]%}✗%{$reset_color%}"
-fi

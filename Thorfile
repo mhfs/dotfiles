@@ -16,9 +16,9 @@ module Dotfiles
       link_file "mhfs.vim", "~/.vim/colors/mhfs.vim", :symbolic => true
 
       # Zsh
-      link_file "localrc", "~/.localrc", :symbolic => true
-      link_file "zshrc", "~/.zshrc", :symbolic => true
-      link_file "zsh", "~/.zsh", :symbolic => true
+      # link_file "localrc", "~/.localrc", :symbolic => true
+      # link_file "zshrc", "~/.zshrc", :symbolic => true
+      # link_file "zsh", "~/.zsh", :symbolic => true
 
       # Rubygems
       link_file "gemrc", "~/.gemrc", :symbolic => true
@@ -35,4 +35,3 @@ module Dotfiles
     end
   end
 end
-

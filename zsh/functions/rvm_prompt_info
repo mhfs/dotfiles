@@ -1,4 +1,0 @@
-function rvm_prompt_info() {
-  ruby_version=$(~/.rvm/bin/rvm-prompt i v 2> /dev/null) || return
-  echo " [$ruby_version]"
-}
