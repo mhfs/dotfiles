@@ -11,26 +11,24 @@ module Dotfiles
     desc "link", "link dotfiles to proper places"
     def link
       # Vim
-      link_file "vimrc", "~/.vimrc.local", :symbolic => true
-      link_file "gvimrc", "~/.gvimrc.local", :symbolic => true
-      link_file "mhfs.vim", "~/.vim/colors/mhfs.vim", :symbolic => true
+      link_file "vim/vimrc", "~/.vimrc.local", :symbolic => true
+      link_file "vim/gvimrc", "~/.gvimrc.local", :symbolic => true
+      link_file "vim/mhfs.vim", "~/.vim/colors/mhfs.vim", :symbolic => true
 
       # Zsh
       link_file "zsh/functions", "~/.oh-my-zsh/custom/functions", :symbolic => true
       link_file "zsh/functions.zsh", "~/.oh-my-zsh/custom/functions.zsh", :symbolic => true
 
-      # Rubygems
-      link_file "gemrc", "~/.gemrc", :symbolic => true
-
-      # Irb
-      link_file "irbrc", "~/.irbrc", :symbolic => true
+      # Ruby
+      link_file "ruby/gemrc", "~/.gemrc", :symbolic => true
+      link_file "ruby/irbrc", "~/.irbrc", :symbolic => true
 
       # Git
       @github_token = ask("Github token:")
-      template "templates/gitconfig.tt", "./compiled/gitconfig"
+      template "git/templates/gitconfig.tt", "./compiled/gitconfig"
 
       link_file "compiled/gitconfig", "~/.gitconfig"
-      link_file "gitignore", "~/.gitignore", :symbolic => true
+      link_file "git/gitignore", "~/.gitignore", :symbolic => true
     end
   end
 end
