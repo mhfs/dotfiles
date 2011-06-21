@@ -11,14 +11,13 @@ module Dotfiles
     desc "link", "link dotfiles to proper places"
     def link
       # Vim
-      link_file "vimrc",  "~/.vimrc.local", :symbolic => true
+      link_file "vimrc", "~/.vimrc.local", :symbolic => true
       link_file "gvimrc", "~/.gvimrc.local", :symbolic => true
       link_file "mhfs.vim", "~/.vim/colors/mhfs.vim", :symbolic => true
 
       # Zsh
-      # link_file "localrc", "~/.localrc", :symbolic => true
-      # link_file "zshrc", "~/.zshrc", :symbolic => true
-      # link_file "zsh", "~/.zsh", :symbolic => true
+      link_file "zsh/functions", "~/.oh-my-zsh/custom/functions", :symbolic => true
+      link_file "zsh/functions.zsh", "~/.oh-my-zsh/custom/functions.zsh", :symbolic => true
 
       # Rubygems
       link_file "gemrc", "~/.gemrc", :symbolic => true
