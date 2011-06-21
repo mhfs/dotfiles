@@ -18,5 +18,5 @@ imenu <silent> File.Save <Esc>:if expand("%") == ""<Bar>browse confirm w<Bar>els
 " Matp CMD-T to peepopen a la textmate
 " map <D-t> <Plug>PeepOpen
 
-color mhfs
+color solarized
 set transparency=3

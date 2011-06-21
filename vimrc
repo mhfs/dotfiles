@@ -16,7 +16,7 @@ nmap <silent> <leader>ev :tabedit $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 "
 " colors
-colorscheme vividchalk
+colorscheme solarized
 
 
 " Enhanced command line completion.
