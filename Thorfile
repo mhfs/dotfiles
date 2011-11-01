@@ -22,6 +22,7 @@ module Dotfiles
       # Ruby
       link_file "ruby/gemrc", "~/.gemrc", :symbolic => true
       link_file "ruby/irbrc", "~/.irbrc", :symbolic => true
+      link_file "ruby/pryrc", "~/.pryrc", :symbolic => true
 
       # Git
       @github_token = ask("Github token:")

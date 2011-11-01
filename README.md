@@ -3,7 +3,6 @@ MHFS Dotfiles
 
 Collection of my dotfiles.
 
-
 Usage
 -----
 
@@ -31,11 +30,16 @@ I don't use rdoc and ri locally.
 Irb
 ---
 
+User pry if available, otherwise Irb with some customizations:
+
 Better rails log, completion, awesome print, history, etc.
 
+Pry
+---
+
+Make it work with Rails and add better prompt and output.
 
 Git
 ---
 
 Global gitignore and github capable gitconfig.
-

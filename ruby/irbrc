@@ -1,3 +1,13 @@
+# Start pry if available and let it flow otherwise
+# https://github.com/fnando/dotfiles/blob/master/files/irbrc
+begin
+  require "pry"
+  Pry.start
+  exit
+rescue LoadError => e
+  warn "=> Unable to load pry"
+end
+
 # Log to STDOUT if in Rails
 if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
  require 'logger'
@@ -27,13 +37,3 @@ def pbcopy(string)
   `echo "#{string}" | pbcopy`
   string
 end
-
-# Awesome Print
-require "rubygems"
-require "ap"
-IRB::Irb.class_eval do
-  def output_value
-    ap @context.last_value
-  end
-end
-
