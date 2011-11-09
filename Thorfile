@@ -24,6 +24,9 @@ module Dotfiles
       link_file "ruby/irbrc", "~/.irbrc", :symbolic => true
       link_file "ruby/pryrc", "~/.pryrc", :symbolic => true
 
+      # Ack
+      link_file "ackrc", "~/.ackrc", :symbolic => true
+
       # Git
       @github_token = ask("Github token:")
       template "git/templates/gitconfig.tt", "./compiled/gitconfig"
