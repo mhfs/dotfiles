@@ -11,8 +11,8 @@ module Dotfiles
     desc "link", "link dotfiles to proper places"
     def link
       # Vim
-      link_file "vim/vimrc", "~/.vimrc.local", :symbolic => true
-      link_file "vim/gvimrc", "~/.gvimrc.local", :symbolic => true
+      link_file "vim/vimrc", "~/.vimrc.after", :symbolic => true
+      link_file "vim/gvimrc", "~/.gvimrc.after", :symbolic => true
       link_file "vim/mhfs.vim", "~/.vim/colors/mhfs.vim", :symbolic => true
 
       # Zsh
