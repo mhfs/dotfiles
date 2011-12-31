@@ -16,8 +16,8 @@ module Dotfiles
       link_file "vim/mhfs.vim", "~/.vim/colors/mhfs.vim", :symbolic => true
 
       # Zsh
-      link_file "zsh/functions", "~/.oh-my-zsh/custom/functions", :symbolic => true
-      link_file "zsh/functions.zsh", "~/.oh-my-zsh/custom/functions.zsh", :symbolic => true
+      link_file "zsh/mhfs",   "#{ENV["ZSH"]}/custom/plugins/mhfs", :symbolic => true
+      link_file "zsh/zshenv", "~/.zshenv", :symbolic => true
 
       # Ruby
       link_file "ruby/gemrc", "~/.gemrc", :symbolic => true
