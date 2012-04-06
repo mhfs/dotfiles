@@ -13,14 +13,12 @@ Link files:
 Vim
 ---
 
-I use janus (github.com/carlhuda/janus) and some personal options on
-top of it. The vimrc and gvimrc are then linked to .vimrc.local and
-.gvimrc.local.
+I now use a separate repo for my vim stuff: https://github.com/mhfs/vimfiles
 
 Zsh
 ---
 
-Initially stolen from ryanb's dotfiles with some customization.
+Currently using `oh-my-zsh` with a few customizations.
 
 Rubygems
 --------
