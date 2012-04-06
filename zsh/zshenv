@@ -3,5 +3,8 @@ export PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X
 
 export EDITOR=vim
 
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # Load rbenv
 eval "$(rbenv init -)"
