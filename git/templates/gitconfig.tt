@@ -26,3 +26,5 @@
 	token = <%= @github_token %>
 [merge]
 	summary = true
+[push]¬
+▸ default = current¬
