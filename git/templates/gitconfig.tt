@@ -27,4 +27,6 @@
 [merge]
 	summary = true
 [push]¬
-▸ default = current¬
+	default = current¬
+[branch]
+	autosetuprebase = always
