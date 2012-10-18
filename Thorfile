@@ -19,15 +19,15 @@ module Dotfiles
       link_file "ruby/irbrc", "~/.irbrc", :symbolic => true
       link_file "ruby/pryrc", "~/.pryrc", :symbolic => true
 
+      # Pow
+      link_file "pow/powconfig", "~/.powconfig", :symbolic => true
+
       # Ack
       link_file "ackrc", "~/.ackrc", :symbolic => true
 
       # Git
-      @github_token = ask("Github token:")
-      template "git/templates/gitconfig.tt", "./compiled/gitconfig"
-
-      link_file "compiled/gitconfig", "~/.gitconfig"
-      link_file "git/gitignore",      "~/.gitignore", :symbolic => true
+      link_file "git/gitconfig", "~/.gitconfig", :symbolic => true
+      link_file "git/gitignore", "~/.gitignore", :symbolic => true
     end
   end
 end
