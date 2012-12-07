@@ -13,6 +13,7 @@ module Dotfiles
       # Zsh
       link_file "zsh/mhfs",   "#{ENV["ZSH"]}/custom/plugins/mhfs", :symbolic => true
       link_file "zsh/zshenv", "~/.zshenv",                         :symbolic => true
+      link_file "zsh/zshrc",  "~/.zshrc",                          :symbolic => true
 
       # Ruby
       link_file "ruby/gemrc", "~/.gemrc", :symbolic => true
