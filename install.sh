@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=~/code/dotfiles         # dotfiles directory
+dir=~/my/dotfiles         # dotfiles directory
 backup_dir=$dir/backup      # backup dir for existing dotfils
 files="ackrc gitconfig gitignore powconfig gemrc irbrc pryrc zshenv zshrc" # list of files/folders to symlink in homedir
 
