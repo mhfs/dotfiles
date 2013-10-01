@@ -1,13 +1,5 @@
-# Ensure homebrew path is before system stuff
-export PATH="/opt/boxen/homebrew/bin:$PATH"
-
-# Setup node and npm executables
-export NODE_PATH="/usr/local/lib/node"
-export PATH="/usr/local/share/npm/bin:$PATH"
-
-# Setup and init rbenv
-export PATH="/opt/boxen/rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# Source boxen
+source /opt/boxen/env.sh
 
 export EDITOR=vim
 
