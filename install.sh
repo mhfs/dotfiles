@@ -27,4 +27,4 @@ done
 
 # linking mhfs oh-my-zsh plugin
 echo "Synlink mhfs zsh plugin to $ZSH/custom/plugins/mhfs"
-ln -s $dir/mhfs_zsh $ZSH/custom/plugins/mhfs
+ln -s $dir/mhfs_zsh ~/.oh-my-zsh/custom/plugins/mhfs
