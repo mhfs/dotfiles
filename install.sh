@@ -2,7 +2,7 @@
 
 dir=~/my/dotfiles         # dotfiles directory
 backup_dir=$dir/backup      # backup dir for existing dotfils
-files="ackrc gitconfig gitignore powconfig gemrc irbrc pryrc zshenv zshrc" # list of files/folders to symlink in homedir
+files="ackrc gitconfig gitignore powconfig gemrc irbrc pryrc zshenv zshrc psqlrc slate" # list of files/folders to symlink in homedir
 
 # create backup directory in dotfiles dir
 echo "Creating $backup_dir for backup of any existing dotfiles in ~"
@@ -27,4 +27,4 @@ done
 
 # linking mhfs oh-my-zsh plugin
 echo "Synlink mhfs zsh plugin to $ZSH/custom/plugins/mhfs"
-ln -s $dir/mhfs_zsh ~/.oh-my-zsh/custom/plugins/mhfs
+ln -Fs $dir/mhfs_zsh ~/.oh-my-zsh/custom/plugins/mhfs
