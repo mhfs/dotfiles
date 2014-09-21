@@ -1,5 +1,8 @@
-# Source boxen
-source /opt/boxen/env.sh
+# Source boxen if present
+if [ -e "/opt/boxen/env.sh" ]
+then
+  source /opt/boxen/env.sh
+fi
 
 export EDITOR=vim
 
