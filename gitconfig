@@ -10,7 +10,7 @@
 	rb = rebase
 	mg = merge
 	st = status -s
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%aN at %cd)%Creset' --abbrev-commit --date=short
 [color]
 	branch = auto
 	diff = auto
