@@ -1,0 +1,7 @@
+---
+- hosts: all
+  remote_user: root
+
+  tasks:
+    - apt_repository: repo='ppa:chris-lea/redis-server' state=present update_cache=true
+    - apt: pkg=redis-server state=latest

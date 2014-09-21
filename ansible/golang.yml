@@ -1,0 +1,30 @@
+---
+- hosts: all
+  vars:
+    go_tarball: go1.3.1.linux-amd64.tar.gz
+    go_download_location: "http://golang.org/dl/{{ go_tarball }}"
+    go_tarball_checksum: "578c4749f0f0f6c9e0a0da8ba6129750f03f5ca6d90e77774376a6f2da5fa77e"
+    go_version_target: "go version go1.3.1 linux/amd64"
+
+  remote_user: root
+
+  tasks:
+    - get_url: url={{ go_download_location }} dest=/usr/local/src/{{ go_tarball }} sha256sum={{ go_tarball_checksum }}
+
+    - name: Register the current Go version (if any)
+      command: /usr/local/go/bin/go version
+      ignore_errors: yes
+      register: go_version
+
+    - name: Extract the Go tarball if Go is not yet installed or if it is not the desired version
+      command: tar -C /usr/local -xf /usr/local/src/{{ go_tarball }}
+      when: go_version|failed or go_version.stdout != go_version_target
+
+    - name: Add the Go bin directory to the PATH environment variable for all users
+      copy: src=files/go-bin.sh
+            dest=/etc/profile.d
+
+    - name: Modify path to include go binaries
+      sudo: true
+      sudo_user: mhfs
+      lineinfile: dest=~/.zshenv regexp='^export PATH=' line='export PATH=/usr/local/go/bin:$PATH'

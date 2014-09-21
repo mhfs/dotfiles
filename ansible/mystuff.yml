@@ -3,7 +3,7 @@
   vars:
     username: mhfs
 
-  remote_user: ubuntu
+  remote_user: root
   sudo: true
 
   tasks:
@@ -42,14 +42,13 @@
         - vimfiles
 
     - name: install dotfiles
-      shell: ./install.sh >> ~/.dotfiles_installed chdir=/home/{{username}}/my/dotfiles creates=~/.dotfiles_installed
+      shell: ./install.sh >> ~/.dotfiles_installed chdir=/home/{{username}}/my/dotfiles
       sudo_user: "{{username}}"
 
     - name: install vimfiles
       shell: "{{item}} >> ~/.vimfiles_installed"
       args:
         chdir: /home/{{username}}/my/vimfiles
-        creates: ~/.vimfiles_installed
       sudo_user: "{{username}}"
       with_items:
         - "git submodule init"

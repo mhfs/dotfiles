@@ -1,0 +1,8 @@
+---
+- hosts: all
+  remote_user: root
+
+  tasks:
+    - get_url: url=https://deb.nodesource.com/setup dest=/tmp/nodesetup.sh mode=755 force=no
+    - command: /tmp/nodesetup.sh creates=/usr/bin/nodejs
+    - apt: pkg=nodejs state=latest

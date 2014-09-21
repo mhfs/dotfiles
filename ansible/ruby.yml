@@ -1,0 +1,8 @@
+---
+- hosts: all
+  remote_user: root
+
+  tasks:
+    - apt_key: url=http://apt.hellobits.com/hellobits.key state=present
+    - apt_repository: repo='deb http://apt.hellobits.com/ trusty main' state=present update_cache=true
+    - apt: pkg=ruby-2.1 state=latest
