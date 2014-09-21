@@ -10,6 +10,14 @@
     - name: create user
       user: name={{username}} state=present shell=/bin/zsh
 
+    - name: enable passwordless sudo
+      lineinfile:
+        dest: /etc/sudoers.d/{{username}}
+        state: present
+        regexp: '^{{username}} ALL\='
+        line: '{{username}} ALL=(ALL) NOPASSWD:ALL'
+        create: true
+
     - name: create authorized keys
       authorized_key: user={{username}} key="{{ lookup('file', '/Users/mhfs/.ssh/id_rsa.pub') }}" state=present
 
