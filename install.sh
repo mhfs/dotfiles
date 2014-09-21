@@ -22,7 +22,7 @@ for file in $files; do
 
   # create new links
   echo "Creating symlink to $file in home directory."
-  ln -s $dir/$file ~/.$file
+  ln -Fs $dir/$file ~/.$file
 done
 
 # linking mhfs oh-my-zsh plugin
