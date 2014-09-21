@@ -1,0 +1,50 @@
+---
+- hosts: all
+  vars:
+    username: mhfs
+
+  remote_user: ubuntu
+  sudo: true
+
+  tasks:
+    - name: create user
+      user: name={{username}} state=present shell=/bin/zsh
+
+    - name: create authorized keys
+      authorized_key: user={{username}} key="{{ lookup('file', '/Users/mhfs/.ssh/id_rsa.pub') }}" state=present
+
+    - name: install latest packages
+      apt: pkg={{item}} state=latest
+      with_items:
+        - git
+        - zsh
+
+    - name: clone oh-my-zsh repo
+      git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/{{username}}/.oh-my-zsh
+      sudo_user: "{{username}}"
+
+    - name: create code directory
+      file: path=/home/{{username}}/my state=directory owner={{username}} group={{username}}
+
+    - name: clone my repos
+      git: repo=https://github.com/mhfs/{{item}}.git dest=/home/{{username}}/my/{{item}}
+      sudo_user: "{{username}}"
+      with_items:
+        - dotfiles
+        - vimfiles
+
+    - name: install dotfiles
+      shell: ./install.sh >> ~/.dotfiles_installed chdir=/home/{{username}}/my/dotfiles
+      sudo_user: "{{username}}"
+
+    - name: install vimfiles
+      shell: "{{item}} >> ~/.vimfiles_installed"
+      args:
+        chdir: /home/{{username}}/my/vimfiles
+      sudo_user: "{{username}}"
+      with_items:
+        - "git submodule init"
+        - "git submodule update"
+        - "ln -fs ~/my/vimfiles/ ~/.vim"
+        - "ln -fs ~/my/vimfiles/vimrc ~/.vimrc"
+        - "ln -fs ~/my/vimfiles/gvimrc ~/.gvimrc"
