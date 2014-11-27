@@ -1,6 +1,21 @@
 config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+
+# Aliases
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf push left bar-resize:screenSizeX/2
+alias righthalf push right bar-resize:screenSizeX/2
+alias tophalf push top bar-resize:screenSizeY/2
+alias bottomhalf push bottom bar-resize:screenSizeY/2
+alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
+alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
+alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
+alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
+alias macbookpro 1280x800
 
 # Resize Bindings
 bind right:alt       resize +10% +0
@@ -14,13 +29,13 @@ bind down:ctrl;alt   resize +0   -10% bottom-right
 
 # Convenient Sizes
 bind c:ctrl;alt;cmd  move screenSizeX/4;screenSizeY/4  1440;900
-bind m:ctrl;alt;cmd  move screenOriginX;screenOriginY screenSizeX;screenSizeY
+bind m:ctrl;alt;cmd  ${full}
 
 # Push Bindings
-bind right:ctrl;cmd  push right bar-resize:screenSizeX/2
-bind left:ctrl;cmd   push left  bar-resize:screenSizeX/2
-bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
-bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
+bind right:ctrl;cmd  ${righthalf}
+bind left:ctrl;cmd   ${lefthalf}
+bind up:ctrl;cmd     ${tophalf}
+bind down:ctrl;cmd   ${bottomhalf}
 
 # Nudge Bindings
 bind right:shift;alt nudge +10% +0
@@ -50,4 +65,13 @@ bind i:ctrl;alt;cmd focus 'iTerm'
 bind h:ctrl;alt;cmd focus 'HipChat'
 
 # Window Hints
-bind esc:cmd hint
+bind esc:cmd hint QWERTYASDFGHZXCVBN
+
+# Layouts
+layout laptop 'iTerm':REPEAT ${full}
+layout laptop 'MacVim':REPEAT ${full}
+layout laptop 'Google Chrome':REPEAT ${full}
+layout laptop 'Sparrow':REPEAT ${full}
+
+# Layouts Defaults
+default laptop  resolutions:${macbookpro}
