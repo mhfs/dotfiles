@@ -10,6 +10,7 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ia="open -a 'iA Writer'"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

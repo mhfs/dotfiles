@@ -1,12 +1,13 @@
 ---
 - hosts: all
   vars:
-    go_tarball: go1.3.1.linux-amd64.tar.gz
+    go_tarball: go1.4.2.linux-amd64.tar.gz
     go_download_location: "http://golang.org/dl/{{ go_tarball }}"
-    go_tarball_checksum: "578c4749f0f0f6c9e0a0da8ba6129750f03f5ca6d90e77774376a6f2da5fa77e"
-    go_version_target: "go version go1.3.1 linux/amd64"
+    go_tarball_checksum: "141b8345932641483c2437bdbd65488a269282ac85f91170805c273f03dd223b"
+    go_version_target: "go version go1.4.2 linux/amd64"
 
-  remote_user: root
+  remote_user: ubuntu
+  sudo: true
 
   tasks:
     - get_url: url={{ go_download_location }} dest=/usr/local/src/{{ go_tarball }} sha256sum={{ go_tarball_checksum }}

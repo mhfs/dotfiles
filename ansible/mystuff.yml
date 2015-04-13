@@ -3,7 +3,7 @@
   vars:
     username: mhfs
 
-  remote_user: root
+  remote_user: ubuntu
   sudo: true
 
   tasks:
@@ -34,27 +34,27 @@
       sudo_user: "{{username}}"
 
     - name: create code directory
-      file: path=/home/{{username}}/my state=directory owner={{username}} group={{username}}
+      file: path=/home/{{username}}/code state=directory owner={{username}} group={{username}}
 
     - name: clone my repos
-      git: repo=https://github.com/mhfs/{{item}}.git dest=/home/{{username}}/my/{{item}}
+      git: repo=https://github.com/mhfs/{{item}}.git dest=/home/{{username}}/code/{{item}}
       sudo_user: "{{username}}"
       with_items:
         - dotfiles
         - vimfiles
 
     - name: install dotfiles
-      shell: ./install.sh >> ~/.dotfiles_installed chdir=/home/{{username}}/my/dotfiles
+      shell: ./install.sh >> ~/.dotfiles_installed chdir=/home/{{username}}/code/dotfiles
       sudo_user: "{{username}}"
 
     - name: install vimfiles
       shell: "{{item}} >> ~/.vimfiles_installed"
       args:
-        chdir: /home/{{username}}/my/vimfiles
+        chdir: /home/{{username}}/code/vimfiles
       sudo_user: "{{username}}"
       with_items:
         - "git submodule init"
         - "git submodule update"
-        - "ln -fs ~/my/vimfiles/ ~/.vim"
-        - "ln -fs ~/my/vimfiles/vimrc ~/.vimrc"
-        - "ln -fs ~/my/vimfiles/gvimrc ~/.gvimrc"
+        - "ln -fs ~/code/vimfiles/ ~/.vim"
+        - "ln -fs ~/code/vimfiles/vimrc ~/.vimrc"
+        - "ln -fs ~/code/vimfiles/gvimrc ~/.gvimrc"
