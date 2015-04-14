@@ -20,6 +20,8 @@ install watch
 install wget
 install zsh
 
+install https://raw.github.com/adammck/terraform-inventory/master/homebrew/terraform-inventory.rb
+
 # install dnsmasq # needs work
 
 # Install Casks
@@ -35,3 +37,7 @@ cask install slack
 cask install dropbox
 cask install 1password
 cask install slate
+cask install viscosity
+cask install spotify
+cask install skitch
+cask install clipmenu
