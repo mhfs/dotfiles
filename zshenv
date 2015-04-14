@@ -1,9 +1,3 @@
-# Source boxen if present
-if [ -e "/opt/boxen/env.sh" ]
-then
-  source /opt/boxen/env.sh
-fi
-
 export EDITOR=vim
 
 export LANG=en_US.UTF-8

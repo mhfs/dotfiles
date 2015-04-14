@@ -20,7 +20,7 @@
 	safecrlf = true
 [core]
 	editor = /usr/bin/vim
-	excludesfile = /opt/boxen/config/git/gitignore
+	excludesfile = ~/.gitignore
 [merge]
 	summary = true
 [branch]
@@ -30,9 +30,6 @@
 [github]
 	user = mhfs
 	password = !security 2>&1 >/dev/null find-generic-password -gs github.password | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
-
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential
 
 [hub]
 protocol = https
