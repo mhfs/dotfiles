@@ -65,7 +65,7 @@ bind i:ctrl;alt;cmd focus 'iTerm'
 bind h:ctrl;alt;cmd focus 'HipChat'
 
 # Window Hints
-bind esc:cmd hint QWERTYASDFGHZXCVBN
+# bind esc:cmd hint QWERTYASDFGHZXCVBN
 
 # Layouts
 layout laptop 'iTerm':REPEAT ${full}

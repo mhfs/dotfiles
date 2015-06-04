@@ -35,3 +35,5 @@ plugins=(git mhfs bundler rails zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

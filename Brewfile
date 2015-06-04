@@ -7,6 +7,7 @@ install go
 install httpie
 install hub
 install imagemagick
+install memcached
 install mercurial
 install mysql
 install percona-toolkit
@@ -19,6 +20,12 @@ install sqlite
 install watch
 install wget
 install zsh
+install rbenv
+install ruby-build
+install terraform
+install heroku-toolbelt
+install nodejs
+install tmux
 
 install https://raw.github.com/adammck/terraform-inventory/master/homebrew/terraform-inventory.rb
 
@@ -41,3 +48,6 @@ cask install viscosity
 cask install spotify
 cask install skitch
 cask install clipmenu
+cask install atom
+cask install skype
+cask install firefox
