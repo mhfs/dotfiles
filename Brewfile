@@ -28,6 +28,7 @@ brew "terraform"
 brew "heroku-toolbelt"
 brew "nodejs"
 brew "tmux"
+brew "vim"
 
 # install https://raw.github.com/adammck/terraform-inventory/master/homebrew/terraform-inventory.rb
 
@@ -54,4 +55,5 @@ cask "atom"
 cask "skype"
 cask "utorrent"
 cask "beamer"
-# cask "firefox"
+cask "the-unarchiver"
+cask "firefox"
