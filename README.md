@@ -12,6 +12,13 @@ Link files:
 ./install.sh
 ```
 
+ZSH
+---
+
+- Link zsh/.zshenv to $HOME
+- Link zsh/ to ~/.config/zsh
+- Init submodules
+
 Ansbile
 -------
 
