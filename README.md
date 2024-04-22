@@ -19,6 +19,11 @@ ZSH
 - Link zsh/ to ~/.config/zsh
 - Init submodules
 
+NVim
+----
+
+- Link nvim to ~/.config/nvim
+
 Ansbile
 -------
 
