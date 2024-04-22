@@ -1,0 +1,6 @@
+[submodule "zsh/prompts/powerlevel10k"]
+	path = zsh/prompts/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "zsh/prompts/pure"]
+	path = zsh/prompts/pure
+	url = https://github.com/sindresorhus/pure.git
