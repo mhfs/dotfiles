@@ -11,15 +11,35 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
+    {
+      '<leader>n',
+      ':Neotree reveal<CR>',
+      desc = '[N]eoTree reveal',
+    },
   },
   opts = {
     filesystem = {
+      hijack_netrw_behavior = 'open_default',
       window = {
         mappings = {
-          ['\\'] = 'close_window',
+          ['<leader>n'] = 'close_window',
         },
       },
     },
   },
+  config = function()
+    require('neo-tree').setup {
+      event_handlers = {
+        {
+          event = 'file_opened',
+          handler = function(_)
+            -- auto close
+            -- vimc.cmd("Neotree close")
+            -- OR
+            require('neo-tree.command').execute { action = 'close' }
+          end,
+        },
+      },
+    }
+  end,
 }
