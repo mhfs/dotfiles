@@ -909,5 +909,29 @@ require('lazy').setup({
   },
 })
 
+-- Removes the intro text on launch
+vim.o.shortmess = vim.o.shortmess .. 'I'
+
+-- NeoVide specific settings
+-- keep in mind some stuff can be set at ~/.config/neovide/config.toml
+if vim.g.neovide then
+  vim.opt.linespace = 10
+
+  -- kill nonsense animations
+  vim.g.neovide_cursor_animation_length = 0
+
+  -- dynamic scale changes for screen sharing
+  vim.g.neovide_scale_factor = 1.0
+  local change_scale_factor = function(delta)
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+  end
+  vim.keymap.set('n', '<C-=>', function()
+    change_scale_factor(1.1)
+  end)
+  vim.keymap.set('n', '<C-->', function()
+    change_scale_factor(1 / 1.1)
+  end)
+end
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
