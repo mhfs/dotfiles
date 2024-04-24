@@ -1,3 +1,4 @@
 backup
 zsh/.zcompdump
+zsh/.zsh_sessions/
 nvim/lazy-lock.json

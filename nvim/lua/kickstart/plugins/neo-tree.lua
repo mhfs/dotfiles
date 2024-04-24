@@ -4,7 +4,7 @@
 return {
   'nvim-neo-tree/neo-tree.nvim',
   version = '*',
-  -- lazy = false, -- force load for netrw highjack to work on startup
+  lazy = false, -- force load for netrw highjack to work on startup
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
@@ -14,22 +14,23 @@ return {
   keys = {
     {
       '<leader>n',
-      ':Neotree reveal<CR>',
+      ':Neotree position=current reveal<CR>',
       desc = '[N]eoTree reveal',
-    },
-  },
-  opts = {
-    filesystem = {
-      hijack_netrw_behavior = 'open_default',
-      window = {
-        mappings = {
-          ['<leader>n'] = 'close_window',
-        },
-      },
     },
   },
   config = function()
     require('neo-tree').setup {
+      window = {
+        position = 'current',
+      },
+      filesystem = {
+        hijack_netrw_behavior = 'open_current',
+        window = {
+          mappings = {
+            ['<leader>n'] = 'close_window',
+          },
+        },
+      },
       event_handlers = {
         {
           event = 'file_opened',
