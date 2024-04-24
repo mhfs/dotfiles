@@ -23,6 +23,7 @@ NVim
 ----
 
 - Link nvim to ~/.config/nvim
+- Link neovide to ~/.config/neovide
 
 Ansbile
 -------
