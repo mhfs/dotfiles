@@ -20,6 +20,7 @@ return {
   },
   config = function()
     require('neo-tree').setup {
+      enable_git_status = false,
       window = {
         position = 'current',
       },
