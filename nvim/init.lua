@@ -915,7 +915,7 @@ vim.o.shortmess = vim.o.shortmess .. 'I'
 -- NeoVide specific settings
 -- keep in mind some stuff can be set at ~/.config/neovide/config.toml
 if vim.g.neovide then
-  vim.opt.linespace = 10
+  vim.opt.linespace = 6
 
   -- kill nonsense animations
   vim.g.neovide_cursor_animation_length = 0
@@ -932,6 +932,8 @@ if vim.g.neovide then
     change_scale_factor(1 / 1.1)
   end)
 end
+
+vim.keymap.set('n', 'yp', '<cmd>let @+=@%<CR>', { desc = 'Relative [p]ath' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

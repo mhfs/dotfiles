@@ -11,4 +11,4 @@ frame = "buttonless"
 
 [font]
 normal = ["MesloLGS NF"]
-size = 16
+size = 15
