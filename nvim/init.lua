@@ -288,6 +288,7 @@ require('lazy').setup({
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
         ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
+        ['yr'] = { name = '[R]elative Path', _ = 'which_key_ignore' },
       }
       -- visual mode
       require('which-key').register({
@@ -936,7 +937,9 @@ if vim.g.neovide then
   end)
 end
 
-vim.keymap.set('n', 'yp', '<cmd>let @+=@%<CR>', { desc = 'Relative [p]ath' })
+vim.keymap.set('n', 'yrp', '<cmd>let @+=@%<CR>', { desc = '[R]elative Path' })
+vim.keymap.set('n', 'yrl', "<cmd>let @+=join([expand('%'),  line('.')], ':')<CR>", { desc = 'With [L]ine Number' })
+vim.keymap.set('n', 'yc', '<cmd>%y+<CR>', { desc = 'Buffer [C]ontent' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
