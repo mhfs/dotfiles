@@ -25,12 +25,6 @@ source "$ZDOTDIR/conf/history.zsh"
 source "$ZDOTDIR/conf/completion.zsh"
 source "$ZDOTDIR/conf/aliases.zsh"
 
-# Set PATH, MANPATH, etc., for Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Initialize asdf version manager
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
 # Sandbox for options I'm not sure I'll keep
 # auto change dir when valid path is entered without cd
 set -o auto_cd
