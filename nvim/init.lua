@@ -787,6 +787,23 @@ require('lazy').setup({
       vim.cmd.colorscheme 'solarized'
     end,
   },
+  {
+    'christoomey/vim-tmux-navigator',
+    cmd = {
+      'TmuxNavigateLeft',
+      'TmuxNavigateDown',
+      'TmuxNavigateUp',
+      'TmuxNavigateRight',
+      'TmuxNavigatePrevious',
+    },
+    keys = {
+      { '<c-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
+      { '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
+      { '<c-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
+      { '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
+      { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
+    },
+  },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -822,6 +839,11 @@ require('lazy').setup({
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
         return '%2l:%-2v'
+      end
+
+      ---@diagnostic disable-next-line: duplicate-set-field
+      statusline.section_filename = function()
+        return '%f'
       end
 
       -- ... and there is more!
@@ -862,6 +884,9 @@ require('lazy').setup({
   },
   {
     'github/copilot.vim',
+  },
+  {
+    'tpope/vim-unimpaired',
   },
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
@@ -951,6 +976,11 @@ end
 vim.keymap.set('n', 'yrp', '<cmd>let @+=@%<CR>', { desc = '[R]elative Path' })
 vim.keymap.set('n', 'yrl', "<cmd>let @+=join([expand('%'),  line('.')], ':')<CR>", { desc = 'With [L]ine Number' })
 vim.keymap.set('n', 'yc', '<cmd>%y+<CR>', { desc = 'Buffer [C]ontent' })
+
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+  pattern = { '*' },
+  command = [[%s/\s\+$//e]],
+})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
