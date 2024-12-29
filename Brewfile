@@ -1,30 +1,20 @@
-tap "caskroom/cask"
-
 # Install system packages
-brew "ack"
 brew "bat"
+brew "eza"
 brew "git"
+brew "gh"
 brew "httpie"
 brew "imagemagick"
-brew "redis"
-brew "sqlite"
+brew "mise"
+brew "nvim"
+brew "ripgrep"
 brew "wget"
 brew "zsh"
-brew "asdf"
-brew "terraform"
-brew "nodejs"
-brew "nvim"
-
-# install https://raw.github.com/adammck/terraform-inventory/master/homebrew/terraform-inventory.rb
-
-# install dnsmasq # needs work
 
 # Install Casks
-# install caskroom/cask/brew-cask
-
 cask "alfred"
 cask "google-chrome"
-cask "iterm2"
+cask "ghostty"
 cask "slack"
 cask "rectangle"
 cask "maccy"
