@@ -322,7 +322,7 @@ require('lazy').setup({
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-        { 'yr', group = '[R]elative Path', mode = { 'n', 'v' } },
+        -- { 'yr', group = '[R]elative Path' }, FIXME: This is not working
       },
     },
   },
@@ -892,6 +892,12 @@ require('lazy').setup({
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
         return '%2l:%-2v'
+      end
+
+      -- Use relative file path in statusline
+      ---@diagnostic disable-next-line: duplicate-set-field
+      statusline.section_filename = function()
+        return '%f'
       end
 
       -- ... and there is more!
