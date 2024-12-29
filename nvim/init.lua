@@ -102,7 +102,7 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -804,6 +804,7 @@ require('lazy').setup({
       { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
   },
+  { 'lewis6991/fileline.nvim' },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -952,26 +953,7 @@ require('lazy').setup({
 -- Removes the intro text on launch
 vim.o.shortmess = vim.o.shortmess .. 'I'
 
--- NeoVide specific settings
--- keep in mind some stuff can be set at ~/.config/neovide/config.toml
-if vim.g.neovide then
-  vim.opt.linespace = 6
-
-  -- kill nonsense animations
-  vim.g.neovide_cursor_animation_length = 0
-
-  -- dynamic scale changes for screen sharing
-  vim.g.neovide_scale_factor = 1.0
-  local change_scale_factor = function(delta)
-    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
-  end
-  vim.keymap.set('n', '<C-=>', function()
-    change_scale_factor(1.1)
-  end)
-  vim.keymap.set('n', '<C-->', function()
-    change_scale_factor(1 / 1.1)
-  end)
-end
+vim.wo.wrap = false
 
 vim.keymap.set('n', 'yrp', '<cmd>let @+=@%<CR>', { desc = '[R]elative Path' })
 vim.keymap.set('n', 'yrl', "<cmd>let @+=join([expand('%'),  line('.')], ':')<CR>", { desc = 'With [L]ine Number' })
