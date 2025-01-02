@@ -1,0 +1,23 @@
+# Appearance
+font-family = "RobotoMono Nerd Font"
+font-size = 17
+theme = "tokyonight-storm"
+window-decoration = false
+window-padding-balance = true
+quick-terminal-animation-duration=0
+
+# Behavior
+cursor-style = block
+shell-integration-features = no-cursor
+shell-integration = zsh
+copy-on-select = true
+mouse-hide-while-typing = true
+window-save-state = always
+# initial-command="/bin/zsh -l -c tmux new-session -A -s main"
+
+# Keybinds
+keybind = ctrl+l=goto_split:right
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+q=toggle_quick_terminal

@@ -25,6 +25,11 @@ NVim
 - Link nvim to ~/.config/nvim
 - Link neovide to ~/.config/neovide
 
+Ghostty
+-------
+
+- Link ghostty to ~/.config/ghostty
+
 Ansbile
 -------
 
