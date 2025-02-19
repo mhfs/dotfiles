@@ -1,6 +1,5 @@
 return {}
 
--- Backup in case I get back to tmux
 -- return {
 --   'christoomey/vim-tmux-navigator',
 --   cmd = {

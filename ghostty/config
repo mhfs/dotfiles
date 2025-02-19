@@ -4,7 +4,7 @@ font-size = 17
 theme = "tokyonight-storm"
 # window-decoration = false
 macos-titlebar-style = tabs
-# macos-window-shadow = false
+macos-window-shadow = false
 window-padding-balance = true
 quick-terminal-animation-duration=0
 
