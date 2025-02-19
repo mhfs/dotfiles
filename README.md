@@ -30,6 +30,11 @@ Ghostty
 
 - Link ghostty to ~/.config/ghostty
 
+Mise
+----
+
+- Link mise/config.toml to ~/.config/mise/config.toml
+
 Ansbile
 -------
 

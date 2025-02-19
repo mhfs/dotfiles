@@ -1,0 +1,3 @@
+[tools]
+age = "latest"
+sops = "latest"
