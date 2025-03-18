@@ -12,6 +12,7 @@
 	mg = merge
 	st = status -s
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%aN at %cd)%Creset' --abbrev-commit --date=short
+	sw = switch
 [color]
 	branch = auto
 	diff = auto
