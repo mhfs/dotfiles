@@ -31,3 +31,5 @@ set -o auto_cd
 set -o no_case_glob
 set -o correct
 # set -o correct_all
+
+eval "$(mise activate zsh)"
