@@ -28,13 +28,37 @@
 	summary = true
 [branch]
 	autosetuprebase = always
+	sort = -committerdate    # Sort branches by most recent commit first
+[pull]
+	rebase = true 			 # Rebase (instead of merge) on pull
 [push]
 	default = current
+	autoSetupRemote = true   # Automatically set upstream branch on push
 [github]
 	user = mhfs
 	password = !security 2>&1 >/dev/null find-generic-password -gs github.password | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
 
-[hub]
-protocol = https
+[diff]
+	algorithm = histogram    # Clearer diffs on moved/edited lines
+	colorMoved = plain       # Highlight moved blocks in diffs
+	mnemonicPrefix = true    # More intuitive refs in diff output
+[commit]
+	verbose = true           # Include diff comment in commit message template
 [init]
 	defaultBranch = main
+[column]
+	ui = auto 			     # Output in columns when possible
+[tag]
+	sort = -version:refname  # Sort version numbers as you would expect
+[rerere]
+	enabled = true           # Record and reuse conflict resolutions
+	autoupdate = true        # Apply stored conflict resolutions automatically
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+
+[hub]
+protocol = https
