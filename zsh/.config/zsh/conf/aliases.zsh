@@ -43,3 +43,14 @@ n() { [[ $# -eq 0 ]] && nvim . || nvim "$@"; }
 if [[ "$(uname)" == "Linux" ]]; then
   open() { xdg-open "$@" >/dev/null 2>&1 & }
 fi
+
+# Sound effect after command (use: some_command; boop)
+boop() {
+  local last="$?"
+  if [[ "$last" == '0' ]]; then
+    sfx good
+  else
+    sfx bad
+  fi
+  return "$last"
+}

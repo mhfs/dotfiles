@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+if [[ $# -eq 1 ]]; then
+  input="$(cat "$1")"
+else
+  input="$(cat)"
+fi
+
+if hash node 2>/dev/null; then
+  node -e "
+    console.log(
+      require('util').inspect(
+        JSON.parse(process.argv[1]),
+        { depth: 100, colors: true }
+      )
+    )
+  " "$input"
+elif hash jq 2>/dev/null; then
+  echo "$input" | jq
+else
+  echo "$input"
+fi

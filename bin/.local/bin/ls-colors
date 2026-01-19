@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+for i in {0..255}; do
+  echo -ne "\e[38;5;${i}m$i "
+done
+echo

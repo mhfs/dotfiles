@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -u
+set -o pipefail
+
+last="$?"
+if [[ "$last" == '0' ]]; then
+  sfx good
+else
+  sfx bad
+fi
+exit "$last"

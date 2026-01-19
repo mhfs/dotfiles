@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
+SFX_FILE="$XDG_DATA_HOME/sfx/$1.ogg"
+
+if [[ ! -f "$SFX_FILE" ]]; then
+  echo "Error: Sound effect '$1' not found at $SFX_FILE" >&2
+  exit 1
+fi
+
+exec mpv --really-quiet --no-video "$SFX_FILE" &

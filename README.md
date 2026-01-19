@@ -27,7 +27,7 @@ Or install individual packages:
 git clone --recursive https://github.com/mhfs/dotfiles.git ~/Work/mhfs/dotfiles
 cd ~/Work/mhfs/dotfiles
 brew bundle
-stow -t ~ zsh ghostty mise git tmux ruby psql
+stow -t ~ zsh ghostty mise git tmux ruby psql bin
 ```
 
 ## Ansible Playbooks
