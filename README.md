@@ -23,7 +23,7 @@ git clone --recursive https://github.com/mhfs/dotfiles.git ~/Work/mhfs/dotfiles
 cd ~/Work/mhfs/dotfiles
 ```
 
-> The `--recursive` flag initializes git submodules (powerlevel10k, pure prompt).
+> The `--recursive` flag initializes git submodules (powerlevel10k).
 
 If you forgot `--recursive`:
 ```bash
@@ -34,12 +34,13 @@ git submodule update --init --recursive
 
 ```bash
 cd ~/Work/mhfs/dotfiles
-stow -t ~ zsh
+stow -t ~ zsh ghostty
 ```
 
 This creates:
 - `~/.zshenv` -> `dotfiles/zsh/.zshenv`
 - `~/.config/zsh/` -> `dotfiles/zsh/.config/zsh/`
+- `~/.config/ghostty/` -> `dotfiles/ghostty/.config/ghostty/`
 
 ### 4. Set Zsh as Default Shell
 
@@ -53,7 +54,7 @@ Log out and back in for the change to take effect.
 
 ```bash
 cd ~/Work/mhfs/dotfiles
-stow -t ~ -D zsh
+stow -t ~ -D zsh ghostty
 ```
 
 ## macOS: Homebrew Packages

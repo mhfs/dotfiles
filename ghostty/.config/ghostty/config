@@ -1,0 +1,42 @@
+# Dynamic theme colors (omarchy)
+config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
+
+# Font
+font-family = "JetBrainsMono Nerd Font"
+font-style = Regular
+font-size = 10
+
+# Window
+window-theme = ghostty
+window-padding-x = 14
+window-padding-y = 14
+window-padding-balance = true
+confirm-close-surface = false
+resize-overlay = never
+gtk-toolbar-style = flat
+quick-terminal-animation-duration = 0
+
+# macOS-specific (ignored on Linux)
+macos-titlebar-style = tabs
+macos-window-shadow = false
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+
+# Shell integration
+shell-integration = zsh
+shell-integration-features = no-cursor,ssh-env
+
+# Behavior
+copy-on-select = clipboard
+mouse-scroll-multiplier = 0.95
+
+# Keyboard bindings
+keybind = shift+insert=paste_from_clipboard
+keybind = control+insert=copy_to_clipboard
+keybind = shift+enter=text:\x1b\r
+keybind = super+control+shift+alt+arrow_down=resize_split:down,100
+keybind = super+control+shift+alt+arrow_up=resize_split:up,100
+keybind = super+control+shift+alt+arrow_left=resize_split:left,100
+keybind = super+control+shift+alt+arrow_right=resize_split:right,100
