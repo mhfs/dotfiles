@@ -13,6 +13,7 @@ alias cat="bat --theme='Solarized (dark)'"
 alias be='bundle exec'
 alias g='git'
 alias d='docker'
+alias dc='docker compose'
 alias r='rails'
 
 # Shell

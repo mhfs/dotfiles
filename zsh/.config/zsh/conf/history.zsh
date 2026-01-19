@@ -26,8 +26,8 @@ setopt INC_APPEND_HISTORY
 # Expire duplicates first
 setopt HIST_EXPIRE_DUPS_FIRST
 
-# Do not store duplications
-setopt HIST_IGNORE_DUPS
+# Do not store duplications (removes older duplicates)
+setopt HIST_IGNORE_ALL_DUPS
 
 # Ignore duplicates when searching
 setopt HIST_FIND_NO_DUPS

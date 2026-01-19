@@ -1,5 +1,5 @@
 export ZDOTDIR="$HOME/.config/zsh"
-export SSH_AUTH_SOCK=~/.1password/agent.sock
+[[ -S ~/.1password/agent.sock ]] && export SSH_AUTH_SOCK=~/.1password/agent.sock
 
 # Editor
 export EDITOR=nvim

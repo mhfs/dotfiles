@@ -18,11 +18,11 @@
 	diff = auto
 	interactive = auto
 	status = auto
-	autocrlf = input
-	safecrlf = true
 [core]
 	editor = nvim
 	preloadIndex = true
+	autocrlf = input
+	safecrlf = true
 [merge]
 	summary = true
 [branch]
