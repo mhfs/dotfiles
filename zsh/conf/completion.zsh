@@ -14,7 +14,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' list-suffixes
 zstyle ':completion:*' expand prefix suffix
 
-# My `c` shortcut for `cd ~/Code/$1`
+# My `c` shortcut for `cd ~/Work/$1`
 c() { cd ~/Work/$1; }
 _c() { _files -W ~/Work -/; }
 compdef _c c

@@ -16,15 +16,16 @@ alias r='rails'
 
 alias say='espeak-ng'
 
-if command -v zoxide &> /dev/null; then
+# Smart cd with zoxide - falls back to regular cd for existing paths
+if command -v zoxide &>/dev/null; then
   alias cd="zd"
   zd() {
-    if [ $# -eq 0 ]; then
-      builtin cd ~ && return
-    elif [ -d "$1" ]; then
+    if [[ $# -eq 0 ]]; then
+      builtin cd ~
+    elif [[ -d "$1" ]]; then
       builtin cd "$1"
     else
-      z "$@" && printf "\U000F17A9 " && pwd || echo "Error: Directory not found"
+      z "$@" && printf "\U000F17A9 " && pwd
     fi
   }
 fi

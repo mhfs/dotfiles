@@ -1,3 +1,8 @@
+# History file configuration
+export HISTFILE="$HOME/.history"
+export HISTSIZE=10000
+export SAVEHIST=10000
+
 # Up/Down arrow history search
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search

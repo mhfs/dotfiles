@@ -5,41 +5,21 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export EDITOR=nvim
-export VISUAL=nvim
-
-export HISTFILE="$HOME/.history"
-export HISTSIZE=10000
-export SAVEHIST=10000
-
-# Temp walkaround for pg rubygem issue
-export PGGSSENCMODE=disable
-
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-
-# Sets emacs mode
+# Emacs keybindings
 bindkey -e
 
+# Source modular configs
 source "$ZDOTDIR/conf/prompt.zsh"
 source "$ZDOTDIR/conf/history.zsh"
 source "$ZDOTDIR/conf/completion.zsh"
 source "$ZDOTDIR/conf/aliases.zsh"
 
-# Sandbox for options I'm not sure I'll keep
-# auto change dir when valid path is entered without cd
-set -o auto_cd
-set -o no_case_glob
-set -o correct
-# set -o correct_all
+# Shell options
+setopt auto_cd
+setopt no_case_glob
+setopt correct
 
-if command -v mise &> /dev/null; then
-eval "$(mise activate zsh)"
-fi
-
-if command -v zoxide &> /dev/null; then
-  eval "$(zoxide init zsh)"
-fi
-
-if command -v try &> /dev/null; then
-  eval "$(try init ~/Work/tries)"
-fi
+# Tool initialization
+command -v mise &>/dev/null && eval "$(mise activate zsh)"
+command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
+command -v try &>/dev/null && eval "$(try init ~/Work/tries)"
