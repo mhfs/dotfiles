@@ -3,3 +3,6 @@ zsh/.config/zsh/.zcompdump
 zsh/.config/zsh/.zsh_sessions/
 nvim/lazy-lock.json
 tmux/plugins/
+
+# Omarchy backup files
+*.bak.*
