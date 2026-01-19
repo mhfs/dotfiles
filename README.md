@@ -34,18 +34,8 @@ git submodule update --init --recursive
 
 ```bash
 cd ~/Work/mhfs/dotfiles
-stow -t ~ zsh ghostty mise git tmux ruby psql
+stow -t ~ zsh ghostty mise git tmux ruby psql hypr
 ```
-
-This creates:
-- `~/.zshenv` -> `dotfiles/zsh/.zshenv`
-- `~/.config/zsh/` -> `dotfiles/zsh/.config/zsh/`
-- `~/.config/ghostty/` -> `dotfiles/ghostty/.config/ghostty/`
-- `~/.config/mise/` -> `dotfiles/mise/.config/mise/`
-- `~/.config/git/` -> `dotfiles/git/.config/git/`
-- `~/.config/tmux/` -> `dotfiles/tmux/.config/tmux/`
-- `~/.gemrc` -> `dotfiles/ruby/.gemrc`
-- `~/.psqlrc` -> `dotfiles/psql/.psqlrc`
 
 ### 4. Set Zsh as Default Shell
 
@@ -67,7 +57,7 @@ Then start tmux and press `prefix + I` (Ctrl+Space, then I) to install plugins.
 
 ```bash
 cd ~/Work/mhfs/dotfiles
-stow -t ~ -D zsh ghostty mise git tmux ruby psql
+stow -t ~ -D zsh ghostty mise git tmux ruby psql hypr
 ```
 
 ## macOS: Homebrew Packages
