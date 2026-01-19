@@ -1,3 +1,5 @@
 [tools]
 age = "latest"
 sops = "latest"
+node = "latest"
+ruby = "latest"

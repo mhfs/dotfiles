@@ -34,13 +34,14 @@ git submodule update --init --recursive
 
 ```bash
 cd ~/Work/mhfs/dotfiles
-stow -t ~ zsh ghostty
+stow -t ~ zsh ghostty mise
 ```
 
 This creates:
 - `~/.zshenv` -> `dotfiles/zsh/.zshenv`
 - `~/.config/zsh/` -> `dotfiles/zsh/.config/zsh/`
 - `~/.config/ghostty/` -> `dotfiles/ghostty/.config/ghostty/`
+- `~/.config/mise/` -> `dotfiles/mise/.config/mise/`
 
 ### 4. Set Zsh as Default Shell
 
@@ -54,7 +55,7 @@ Log out and back in for the change to take effect.
 
 ```bash
 cd ~/Work/mhfs/dotfiles
-stow -t ~ -D zsh ghostty
+stow -t ~ -D zsh ghostty mise
 ```
 
 ## macOS: Homebrew Packages
