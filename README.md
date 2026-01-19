@@ -1,45 +1,71 @@
-MHFS Dotfiles
-=============
+# MHFS Dotfiles
 
-Collection of my dotfiles.
+Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
-Usage
------
+## Bootstrap a New Machine
 
-Link files:
+### 1. Install Prerequisites
 
+**Arch Linux:**
+```bash
+sudo pacman -S git stow zsh
 ```
-./install.sh
+
+**macOS:**
+```bash
+brew install git stow zsh
 ```
 
-ZSH
----
+### 2. Clone the Repository
 
-- Link zsh/.zshenv to $HOME
-- Link zsh/ to ~/.config/zsh
-- Init submodules
-
-NVim
-----
-
-- Link nvim to ~/.config/nvim
-- Link neovide to ~/.config/neovide
-
-Ghostty
--------
-
-- Link ghostty to ~/.config/ghostty
-
-Mise
-----
-
-- Link mise/config.toml to ~/.config/mise/config.toml
-
-Ansbile
--------
-
-To run ansible playbooks on specific hosts:
-
+```bash
+git clone --recursive https://github.com/mhfs/dotfiles.git ~/Work/mhfs/dotfiles
+cd ~/Work/mhfs/dotfiles
 ```
+
+> The `--recursive` flag initializes git submodules (powerlevel10k, pure prompt).
+
+If you forgot `--recursive`:
+```bash
+git submodule update --init --recursive
+```
+
+### 3. Stow Packages
+
+```bash
+cd ~/Work/mhfs/dotfiles
+stow -t ~ zsh
+```
+
+This creates:
+- `~/.zshenv` -> `dotfiles/zsh/.zshenv`
+- `~/.config/zsh/` -> `dotfiles/zsh/.config/zsh/`
+
+### 4. Set Zsh as Default Shell
+
+```bash
+chsh -s $(which zsh)
+```
+
+Log out and back in for the change to take effect.
+
+## Unstowing (Remove Symlinks)
+
+```bash
+cd ~/Work/mhfs/dotfiles
+stow -t ~ -D zsh
+```
+
+## macOS: Homebrew Packages
+
+```bash
+brew bundle
+```
+
+## Ansible Playbooks
+
+For server provisioning:
+
+```bash
 ansible-playbook -i X.X.X.X, ansible/mystuff.yml
 ```
