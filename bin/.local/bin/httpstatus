@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 set -u
+set -o pipefail
 
 statuses="100 Continue
 101 Switching Protocols
@@ -21,6 +22,7 @@ statuses="100 Continue
 304 Not Modified
 305 Use Proxy
 307 Temporary Redirect
+308 Permanent Redirect
 400 Bad Request
 401 Unauthorized
 402 Payment Required
@@ -49,7 +51,7 @@ statuses="100 Continue
 428 Precondition Required
 429 Too Many Requests
 431 Request Header Fields Too Large
-449 Retry with
+451 Unavailable For Legal Reasons
 500 Internal Server Error
 501 Not Implemented
 502 Bad Gateway
