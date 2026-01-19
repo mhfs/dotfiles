@@ -32,4 +32,14 @@ set -o no_case_glob
 set -o correct
 # set -o correct_all
 
+if command -v mise &> /dev/null; then
 eval "$(mise activate zsh)"
+fi
+
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
+if command -v try &> /dev/null; then
+  eval "$(try init ~/Work/tries)"
+fi
