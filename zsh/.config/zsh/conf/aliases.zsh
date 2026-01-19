@@ -1,20 +1,25 @@
+# File listing (eza)
 alias ls='eza'
 alias ll='eza -l --group-directories-first --icons=always'
 alias la='eza -l -a --group-directories-first --icons=always'
 alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='lt -a'
 
+# Tools
 alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
-
-alias be='bundle exec'
-alias g='git'
-alias reload="source $ZDOTDIR/.zshrc"
 alias cat="bat --theme='Solarized (dark)'"
 
+# Development
+alias be='bundle exec'
+alias g='git'
 alias d='docker'
 alias r='rails'
 
-alias say='espeak-ng'
+# Shell
+alias reload='source $ZDOTDIR/.zshrc'
+
+# Platform-specific aliases
+[[ "$(uname)" == "Linux" ]] && alias say='espeak-ng'
 
 # Smart cd with zoxide - falls back to regular cd for existing paths
 if command -v zoxide &>/dev/null; then
@@ -30,7 +35,10 @@ if command -v zoxide &>/dev/null; then
   }
 fi
 
-n() { if [ "$#" -eq 0 ]; then nvim .; else nvim "$@"; fi; }
-open() {
-  xdg-open "$@" >/dev/null 2>&1 &
-}
+# Quick nvim - opens current dir if no args
+n() { [[ $# -eq 0 ]] && nvim . || nvim "$@"; }
+
+# Linux xdg-open wrapper (macOS has built-in `open`)
+if [[ "$(uname)" == "Linux" ]]; then
+  open() { xdg-open "$@" >/dev/null 2>&1 & }
+fi

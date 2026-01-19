@@ -1,7 +1,7 @@
 # History file configuration
 export HISTFILE="$HOME/.history"
-export HISTSIZE=10000
-export SAVEHIST=10000
+export HISTSIZE=50000
+export SAVEHIST=50000
 
 # Up/Down arrow history search
 autoload -U up-line-or-beginning-search
@@ -11,25 +11,32 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
+# Save timestamp and duration with each command
 setopt EXTENDED_HISTORY
 
-# share history across multiple zsh sessions
+# Share history across multiple zsh sessions
 setopt SHARE_HISTORY
 
-# append to history
+# Append to history
 setopt APPEND_HISTORY
 
-# adds commands as they are typed, not at shell exit
+# Add commands as they are typed, not at shell exit
 setopt INC_APPEND_HISTORY
 
-# expire duplicates first
+# Expire duplicates first
 setopt HIST_EXPIRE_DUPS_FIRST
 
-# do not store duplications
+# Do not store duplications
 setopt HIST_IGNORE_DUPS
 
-#ignore duplicates when searching
+# Ignore duplicates when searching
 setopt HIST_FIND_NO_DUPS
 
-# removes blank lines from history
+# Remove blank lines from history
 setopt HIST_REDUCE_BLANKS
+
+# Don't save commands that start with a space (useful for sensitive commands)
+setopt HIST_IGNORE_SPACE
+
+# Show command before executing when using history expansion (e.g., !!)
+setopt HIST_VERIFY
