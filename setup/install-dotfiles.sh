@@ -1,4 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
 
 REPO_DIR="$HOME/Work/mhfs/dotfiles"
 

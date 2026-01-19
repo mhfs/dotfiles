@@ -1,8 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
 
 cd "$(dirname "$0")"
 
 . ./setup/install-stow.sh
+. ./setup/install-bin.sh
 . ./setup/install-zsh.sh
 . ./setup/install-tmux.sh
 . ./setup/install-mise.sh

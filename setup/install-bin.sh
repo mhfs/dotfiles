@@ -3,4 +3,4 @@ set -e
 set -u
 set -o pipefail
 
-yay -S --noconfirm --needed awsvpnclient
+stow -t ~ bin
