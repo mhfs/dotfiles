@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Editor backups
+*~
+
+# Claude local settings
+**/.claude/settings.local.json

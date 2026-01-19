@@ -21,8 +21,7 @@
 	autocrlf = input
 	safecrlf = true
 [core]
-	editor = /usr/bin/nvim
-	excludesfile = ~/.gitignore
+	editor = nvim
 	preloadIndex = true
 [merge]
 	summary = true
@@ -30,13 +29,12 @@
 	autosetuprebase = always
 	sort = -committerdate    # Sort branches by most recent commit first
 [pull]
-	rebase = true 			 # Rebase (instead of merge) on pull
+	rebase = true            # Rebase (instead of merge) on pull
 [push]
 	default = current
 	autoSetupRemote = true   # Automatically set upstream branch on push
 [github]
 	user = mhfs
-	password = !security 2>&1 >/dev/null find-generic-password -gs github.password | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
 
 [diff]
 	algorithm = histogram    # Clearer diffs on moved/edited lines
@@ -47,7 +45,7 @@
 [init]
 	defaultBranch = main
 [column]
-	ui = auto 			     # Output in columns when possible
+	ui = auto                # Output in columns when possible
 [tag]
 	sort = -version:refname  # Sort version numbers as you would expect
 [rerere]
@@ -61,4 +59,4 @@
 	helper = !/usr/bin/gh auth git-credential
 
 [hub]
-protocol = https
+	protocol = https
