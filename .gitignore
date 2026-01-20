@@ -6,3 +6,6 @@ tmux/plugins/
 
 # Omarchy backup files
 *.bak.*
+
+# Do not commit mise age secret
+mise/.config/mise/age.txt
