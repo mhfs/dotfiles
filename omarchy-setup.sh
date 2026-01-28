@@ -14,3 +14,4 @@ cd "$(dirname "$0")"
 . ./setup/install-awsvpnclient.sh
 . ./setup/install-espeak-ng.sh
 . ./setup/install-usbutils.sh
+. ./setup/install-waybar.sh
